@@ -12,7 +12,6 @@ import numpy as np
 import torch.optim as optim
 import sys
 import torch
-import os
 import gdown
 from torch.utils.data import DataLoader
 import time
@@ -100,7 +99,7 @@ class build_vocabulary(object):
 # Encoder
 
 class encoderNetwork(nn.Module):
-    def __init__(self, input_size, hidden_size, dropout_percentage=0.3):
+    def __init__(self, input_size, hidden_size, dropout_percentage=0.4):
         super(encoderNetwork, self).__init__()
 
         # hyperparameters
@@ -156,7 +155,7 @@ class attentionLayer(nn.Module):
 # Decoder
 
 class decoderNetwork(nn.Module):
-    def __init__(self, hidden_size, output_size, vocab_size, word_dim, helper=None, dropout_percentage=0.2):
+    def __init__(self, hidden_size, output_size, vocab_size, word_dim, helper=None, dropout_percentage=0.4):
         super(decoderNetwork, self).__init__()
 
         self.hidden_size = hidden_size 
